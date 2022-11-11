@@ -21,13 +21,17 @@ class Employee {
 PrintPeopleDetails = (path) => {
     const idInput = prompt("Please input the ID you are looking for: ");
     path = "C:\Users\cstgeorges\Desktop\Databases II\people\simple";
+    file = path + ``
 
-    fs.readFile = path + $`{idInput}.txt`;
+    for (i = 0; i < path.length; i++) {
+        
+    }
+    fs.readFile = path + `${idInput}.txt`;
 }
 
 PrintEmployee = (path) => {
     const idInput = prompt("Please input the ID you are looking for: ");
     path = "C:\Users\cstgeorges\Desktop\Databases II\people\simple";
 
-    fs.readFile = path + $`{idInput}.txt`;
+    fs.readFile = path + `${idInput}.txt`;
 }
