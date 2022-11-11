@@ -22,39 +22,17 @@ class Employee {
 PrintPeopleDetails = (path) => {
     const idInput = prompt.start("Please input the ID you are looking for (1-10): ");
     this.path = path;
-    file = path + ``
+    file = path + `${idInput}.txt`
 
     for (i = 0; i < path.length; i++) {
         fs.readFile(path, function(err, data){
             if (err){
                 return console.log(err);
+            } else if (idInput > 0 && idInput < 11) {
+                console.log(fs.readFile(file));
             }
             console.log(data);
         })
-        switch (idInput) {
-            case "1":
-                console.log(fs.readFile(file));
-            case "2":
-                console.log(fs.readFile(file));
-            case "3":
-                console.log(fs.readFile(file));
-            case "4":
-                console.log(fs.readFile(file));
-            case "5":
-                console.log(fs.readFile(file));
-            case "6":
-                console.log(fs.readFile(file));
-            case "7":
-                console.log(fs.readFile(file));
-            case "8":
-                console.log(fs.readFile(file));
-            case "9":
-                console.log(fs.readFile(file));
-            case "10":
-                console.log(fs.readFile(file));
-            default:
-                return prompt.start("Please reenter a valid ID number (1-10)");
-        }
     }
     var finalFile = fs.readFile(path + `${idInput}.txt`);
     console.log(finalFile);
@@ -67,4 +45,4 @@ PrintEmployee = (path) => {
     fs.readFile = path + `${idInput}.txt`;
 }
 
-PrintPeopleDetails('C:\Users\cstgeorges\Desktop\Databases II\people\simple');
+PrintPeopleDetails('simple');
