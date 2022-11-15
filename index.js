@@ -22,7 +22,7 @@ class Employee {
 PrintPeopleDetails = (path) => {
     const idInput = prompt.start("Please input the ID you are looking for (1-10): ");
     this.path = path;
-    file = path + `${idInput}.txt`
+    file = path + "" + `${idInput}.txt`
 
     for (i = 0; i < path.length; i++) {
         fs.readFile(path, function(err, data){
@@ -34,15 +34,15 @@ PrintPeopleDetails = (path) => {
             console.log(data);
         })
     }
-    var finalFile = fs.readFile(path + `${idInput}.txt`);
+    var finalFile = fs.readFile(file);
     console.log(finalFile);
 }
 
 PrintEmployee = (path) => {
     const idInput = prompt("Please input the ID you are looking for: ");
-    path = "C:\Users\tjoyner\Database2\people\simple";
+    path = "C:\Users\cstgeorges\Documents\GitHub\SimplePersistence\people\simple";
 
     fs.readFile = path + `${idInput}.txt`;
 }
 
-PrintPeopleDetails('simple');
+PrintPeopleDetails("C:\Users\cstgeorges\Documents\GitHub\SimplePersistence\people\simple");
